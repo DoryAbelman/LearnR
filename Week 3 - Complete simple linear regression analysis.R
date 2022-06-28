@@ -11,7 +11,7 @@
 # Lesson 1: Import and explore the dataset (review from last week with updates) ---------------------------------------------------
 
 
-# let's first load our data (grades.csv on Quercus)
+# let's first load our data (grades.csv, attached seperately)
 my_data <- read.csv(file.choose(), header=T)
 
 #let's look at our dataset
