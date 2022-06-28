@@ -1,18 +1,24 @@
-###### STA221 Tutorials Week 5
-# Author: Dory Abelman
-# With inspiration from Katherine Daignault
+###### STA221 Tutorials Week 4
+# Authors: Dory Abelman, Katherine Daignault
 
-# Multiple linear regression 
+# This script will cover an introduction to multiple linear regression. It is intended to be presented live with an instructor sharing 
+# their screen on Rstudio to a class of students. The instructor should take frequent pauses, ask questions to engage students,
+# and answer students questions as they arise.
 
-setwd("~/Documents/TA_Roles/STA_W2022/R")
+# First set the working directory 
+
+setwd("~/Documents/R")
+
 
 # Lesson 1: Import and explore the dataset (review from last week with updates) ---------------------------------------------------
 
-# let's first load our data (infant_mortality.csv on Quercus)
+# let's first load our data (infant_mortality.csv, attached seperately)
+
 my_data <- read.csv(file.choose(), header=T)
 
-#let's look at our dataset
+#let's look at our dataset - always good to view it first before getting into analysis
 head(my_data)
+
 
 # About what the dataset means: 
 
@@ -32,8 +38,7 @@ str(my_data)  # this is another way of seeing the dimensions, which also shows t
 summary(my_data)  # here we can see a summary of each variable in the dataset
 
 
-# suppose we want to fit a multiple linear model for
-# Infant.mort based on HS.drop, low.BW and Teen.Births
+# suppose we want to fit a multiple linear model for: Infant.mort based on HS.drop, low.BW and Teen.Births
 
 # Let's heck the scatterplots for these variables to see if a linear model is appropriate, and to
 #   observe the relationship between the variables:
@@ -93,6 +98,7 @@ abline(h=0, col="red", lwd=3, lty=3) # viewing the y=0 line
 #         normality: the population is normal 
 
 
+
 # Let's make a scatterplot of residuals vs each predictor:
 #par(mfrow=c(1, 3)) <- if you want to view the 3 plots next to each other, activate this line
 
@@ -100,9 +106,11 @@ plot(linear_model_3_predictors$residuals ~ my_data$HS.drop, main="Residuals vs H
      xlab="High School Drop Out", ylab="Residuals")
 abline(h=0, col="red", lwd=3, lty=3) # viewing the y=0 line
 
+
 plot(linear_model_3_predictors$residuals ~ my_data$low.BW, main="Residuals vs Low Birth Weight", 
      xlab="Low Birth Weight", ylab="Residuals")
 abline(h=0, col="red", lwd=3, lty=3) # viewing the y=0 line
+
 
 plot(linear_model_3_predictors$residuals ~ my_data$Teen.Births, main="Residuals vs Teen birth rate", 
      xlab="Teen birth rate", ylab="Residuals")
@@ -151,19 +159,16 @@ summary(linear_model_mort_vs_low_birthweight)
 linear_model_mort_vs_teen_births <- lm(Infant.mort ~ Teen.Births, data=my_data)
 summary(linear_model_mort_vs_teen_births)
 
+
 # Which model is the best?
-
-
 
 # Low birth weight seems to give us the best simple linear model (based on R squared value)
 
 
 
 
-
 # What if we were interested in looking at the effect of high school drop out on infant mortality 
 #   after adjusting for the other two variables? - use a partial regression plot:
-
 
 # First we fit linear model of mortality on the other predictors
 linear_model_mort_vs_others <- lm(Infant.mort ~ low.BW + Teen.Births, data=my_data)
@@ -190,9 +195,11 @@ summary(linear_model_residuals)
 abline(a = linear_model_residuals$coefficients[1], b = linear_model_residuals$coefficients[2], col="red", lwd=2, lty=3)
 
 
+# Let's fit a different model:
 
 linear_model_3_predictors <- lm(Infant.mort ~ HS.drop + low.BW + Teen.Births, data = my_data)
 summary(linear_model_3_predictors)
+
 # What are your thoughts on this result? What does this tell us?
 
 
@@ -206,5 +213,5 @@ summary(linear_model_3_predictors)
 #         The effect of height on infant mortality, taking account  the other two variables
 
 
-# Congratulations on finishing the wek 5 tutorial!
+# Congratulations on finishing this week's tutorial!
 
