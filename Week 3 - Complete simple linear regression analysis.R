@@ -1,8 +1,11 @@
-### STA221 Tutorial Week 4
+### STA221 Tutorial Week 3
 # Author: Dory Abelman
 # With inspiration from Katherine Daignault
 
-# We will go over the general steps today to perform a complete simple linear regression analysis
+
+# This script will cover the general steps to perform a complete simple linear regression analysis. It is intended to be presented 
+# live with an instructor sharing their screen on Rstudio to a class of students. The instructor should take frequent pauses, ask 
+# questions to engage students, and answer students questions as they arise.
 
 
 # Lesson 1: Import and explore the dataset (review from last week with updates) ---------------------------------------------------
