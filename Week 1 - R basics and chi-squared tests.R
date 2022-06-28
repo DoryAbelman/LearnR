@@ -1,8 +1,12 @@
 # Introduction ------------------------------------------------------------
 
-### STA221 W2021 Tutorial Week 2
+### STA221 W2022 Tutorial Week 1
 # Author: Dory Abelman
 # With inspiration from Katherine Daignault
+
+# This script will cover the basics of R and chi-squared tests. It is intended to be presented live with an instructor sharing 
+# their screen on Rstudio to a class of students. The instructor should take frequent pauses, ask questions to engage students,
+# and answer students questions as they arise.
 
 # How R works ------------------------------------------------------------
 
