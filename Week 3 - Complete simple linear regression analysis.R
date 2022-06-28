@@ -238,5 +238,5 @@ legend("topleft", legend=c("original", "HW >30"), col=c("red", "blue"), lty=c(1,
 plot(new_grades$Midterm.2 ~ new_grades$Homework)
 abline(a = linearmodel_homework_vs_midterm2_homework_over_30$coefficients[1], b = linearmodel_homework_vs_midterm2_homework_over_30$coefficients[2], lwd=2, lty=2, col="blue")
 
-# Congrats on finishing the week 4 tutorial! 
+# Congrats on finishing the week 3 tutorial! 
 
