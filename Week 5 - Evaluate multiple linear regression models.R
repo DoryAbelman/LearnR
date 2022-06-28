@@ -73,7 +73,7 @@ plot(my_data$Life.exp ~ my_data$Illiteracy, main="Life expectancy vs Illiteracy"
 # Review: linearity: the relationship between x and y is linear 
 #         independence: errors are mutually independent (appear random)
 #         equal variance: errors are equally scattered across x-axis 
-#         normality: the population is normal 
+#         normality: the population is normally distributed 
 
 
 
@@ -100,8 +100,12 @@ plot(residuals(full_mod) ~ my_data$Illiteracy, main="Residuals vs Illiteracy",
 
 # Let's check normality
 
+# We can checl normality using a histogram. Look for a bell shape:
 hist(full_mod$residuals, breaks = 50) # do we see a bell-curve like shape?
 
+# We can also check normality by using a qqplot. This is called a 'quartile-quartile' plot. 
+#  Look for points that are on the diagonal line. For more information on evaluating these plots, 
+#   see this link: https://stats.stackexchange.com/questions/101274/how-to-interpret-a-qq-plot
 qqnorm(residuals(full_mod))
 qqline(residuals(full_mod))
 
