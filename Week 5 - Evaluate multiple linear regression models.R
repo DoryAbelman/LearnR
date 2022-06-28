@@ -3,6 +3,11 @@
 # With inspiration from Katherine Daignault
 
 
+# This script will cover evaluating multiple linear regression models. It is intended to be presented live with an instructor sharing 
+# their screen on Rstudio to a class of students. The instructor should take frequent pauses, ask questions to engage students,
+# and answer students questions as they arise.
+
+
 # Lesson 1: Import and explore the dataset ---------------------------------------------------
 
 # let's first load our data (infant_mortality.csv on Quercus)
@@ -29,7 +34,7 @@ summary(my_data)  # here we can see a summary of each variable in the dataset
 
 
 
-# Lesson 2: Fitting multiple linear regression models  (review) ------------------------------------------
+# Lesson 2: Fitting multiple linear regression models  (review from previous weeks) ------------------------------------------
 
 # Let's fit a linear model for life expectancy using all predictors
 full_mod <- lm(Life.exp ~ Murder + HSGrad + Income + Illiteracy, data = my_data)
@@ -71,6 +76,8 @@ plot(my_data$Life.exp ~ my_data$Illiteracy, main="Life expectancy vs Illiteracy"
 #         normality: the population is normal 
 
 
+
+# By creating plots, we can examine the model assumptions and see how they hold:
 
 #par(mfrow=c(2,3)) <- if you want to view the all the plots next to each other, activate this line
 
@@ -132,6 +139,7 @@ anova(full_mod)
 #     The coefficient of x depends as much on the other predictors as it does on its own 
 #     predictor.
 
+
 # Let's fit a new model to observe.
 no_income <- lm(Life.exp ~ Murder + HSGrad + Illiteracy, data = my_data) # fit the model
 summary(no_income) # get summary of model 
@@ -151,7 +159,9 @@ anova(no_income, full_mod) # compare differences in model
 #  how different these are, it will tell us how much variability we miss out on
 #  explaining if we were to drop those predictors from the model. 
 
+
 # Helpful resurce to learn more: https://stats.stackexchange.com/questions/172157/how-to-interpret-an-anova-table-comparing-full-vs-reduced-ols-models
+
 
 # Can we now drop Illiteracy?
 no_illiteracy <- lm(Life.exp ~ Murder + HSGrad + Income, data = my_data)
@@ -198,8 +208,14 @@ plot(residuals(reduced_mod) ~ my_data$HSGrad, main="Residuals vs High School Gra
      xlab="High School Graduation", ylab="Residuals")
 
 
-# Checking mormality
+# Checking normality 
+
+# We can checl normality using a histogram. Look for a bell shape:
 hist(residuals(reduced_mod), breaks = 50)
+
+# We can also check normality by using a qqplot. This is called a 'quartile-quartile' plot. 
+#  Look for points that are on the diagonal line. For more information on evaluating these plots, 
+#   see this link: https://stats.stackexchange.com/questions/101274/how-to-interpret-a-qq-plot
 
 qqnorm(residuals(reduced_mod))
 qqline(residuals(reduced_mod))
@@ -266,4 +282,4 @@ qqline(residuals(reduced_mod))
 # This could be one reason to prefer the bigger model.
 
 
-# Congratulations on finishing the week 6 tutorial!
+# Congratulations on finishing this week's tutorial!
