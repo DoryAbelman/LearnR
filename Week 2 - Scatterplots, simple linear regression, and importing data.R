@@ -1,7 +1,10 @@
-### STA221 W2021 Tutorial Week 3
+### STA221 W2021 Tutorial Week 2
 # Author: Dory Abelman
 # With inspiration from Katherine Daignault
 
+# This script will cover scatterplots, simple linear regression, and importing data into R. It is intended to be presented live with an 
+# instructor sharing their screen on Rstudio to a class of students. The instructor should take frequent pauses, ask questions to engage 
+# students, and answer students questions as they arise.
 
 
 # Lesson 1: Making scatterplots + review from last week  -------------------------------------------
@@ -170,6 +173,7 @@ qqline(residuals)
 data_import <- read.csv(file.choose(), header=T) # This will work for a csv file 
 
 # There are other commands for other file types, such as read.table for a tsv file
+
 
 
 # Congrats on finishing your second tutorial!
