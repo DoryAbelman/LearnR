@@ -1,4 +1,4 @@
-###### STA221 Tutorials Week 6
+###### STA221 Tutorials Week 5
 # Author: Dory Abelman
 # With inspiration from Katherine Daignault
 
@@ -10,7 +10,7 @@
 
 # Lesson 1: Import and explore the dataset ---------------------------------------------------
 
-# let's first load our data (infant_mortality.csv on Quercus)
+# let's first load our data (infant_mortality.csv, attached seperately)
 my_data <- read.csv(file.choose(), header=T)
 
 #let's look at our dataset
