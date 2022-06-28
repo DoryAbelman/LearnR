@@ -1,5 +1,6 @@
 ###### STA221 Tutorials Week 4
-# Authors: Dory Abelman, Katherine Daignault
+# Authors: Dory Abelman
+# With inspiration from Katherine Daignault
 
 # This script will cover an introduction to multiple linear regression. It is intended to be presented live with an instructor sharing 
 # their screen on Rstudio to a class of students. The instructor should take frequent pauses, ask questions to engage students,
